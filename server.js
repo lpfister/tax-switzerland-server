@@ -1,5 +1,6 @@
 "use strict";
 var express = require('express');
+const PORT = process.env.PORT || 4000
 const cors = require('cors')
 var { graphqlHTTP } = require('express-graphql');
 var { buildSchema } = require('graphql');
@@ -73,4 +74,4 @@ app.use('/graphql', graphqlHTTP({
   rootValue: root,
   graphiql: true,
 }));
-app.listen(443, () => console.log('Now browse to localhost:4000/graphql'));
+app.listen(PORT, () => console.log('Now browse to localhost:4000/graphql'));
